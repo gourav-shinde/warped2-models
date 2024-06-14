@@ -1,0 +1,10 @@
+
+traffic_sim:993669 terminated with signal 11 at PC=74635d8a189e SP=7463588b6e90.  Backtrace:
+/lib/x86_64-linux-gnu/libc.so.6(+0xa189e)[0x74635d8a189e]
+/lib/x86_64-linux-gnu/libc.so.6(+0xa2ea0)[0x74635d8a2ea0]
+/lib/x86_64-linux-gnu/libc.so.6(free+0x73)[0x74635d8a5453]
+/home/gaurav/workspace//installation/lib/libwarped.so.0(_ZN6warped25TimeWarpFileStreamManagerD1Ev+0xa9)[0x74635df93ef9]
+/home/gaurav/workspace//installation/lib/libwarped.so.0(_ZN6warped23TimeWarpEventDispatcherD1Ev+0xbf)[0x74635df9430f]
+/home/gaurav/workspace//installation/lib/libwarped.so.0(_ZN6warped23TimeWarpEventDispatcherD0Ev+0xd)[0x74635df944bd]
+/lib/x86_64-linux-gnu/libc.so.6(__cxa_finalize+0xb6)[0x74635d845a56]
+/home/gaurav/workspace//installation/lib/libwarped.so.0(+0x6dcb7)[0x74635df50cb7]

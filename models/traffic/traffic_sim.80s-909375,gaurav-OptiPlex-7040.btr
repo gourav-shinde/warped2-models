@@ -1,0 +1,15 @@
+
+traffic_sim:909375 terminated with signal 11 at PC=7fbf009b535c SP=7fbef8e72b30.  Backtrace:
+/home/gaurav/workspace/warped2/build/lib/libwarped.so.0(_ZN6warped23TimeWarpEventDispatcher10sendEventsESt10shared_ptrINS_5EventEESt6vectorIS3_SaIS3_EEjPNS_14LogicalProcessE+0x33c)[0x7fbf009b535c]
+/home/gaurav/workspace/warped2/build/lib/libwarped.so.0(_ZN6warped23TimeWarpEventDispatcher13processEventsEj+0x3b0)[0x7fbf009b6440]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xdc253)[0x7fbf006dc253]
+/lib/x86_64-linux-gnu/libc.so.6(+0x94ac3)[0x7fbf00294ac3]
+/lib/x86_64-linux-gnu/libc.so.6(+0x126850)[0x7fbf00326850]
+/home/gaurav/workspace/warped2/build/lib/libwarped.so.0(_ZN6warped23TimeWarpEventDispatcher10sendEventsESt10shared_ptrINS_5EventEESt6vectorIS3_SaIS3_EEjPNS_14LogicalProcessE+0x33c)[0x7fbf009b535c]
+/home/gaurav/workspace/warped2/build/lib/libwarped.so.0(_ZN6warped23TimeWarpEventDispatcher13processEventsEj+0x3b0)[0x7fbf009b6440]
+/lib/x86_64-linux-gnu/libstdc++.so.6(+0xdc253)[0x7fbf006dc253]
+/lib/x86_64-linux-gnu/libc.so.6(+0x94ac3)[0x7fbf00294ac3]
+/lib/x86_64-linux-gnu/libc.so.6(+0x126850)[0x7fbf00326850]
+tdc++.so.6(+0xdc253)[0x7fbf006dc253]
+/lib/x86_64-linux-gnu/libc.so.6(+0x94ac3)[0x7fbf00294ac3]
+/lib/x86_64-linux-gnu/libc.so.6(+0x126850)[0x7fbf00326850]
