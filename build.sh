@@ -11,9 +11,6 @@ echo "Building warped2 and warped2-models at: " $CUR_LOC
 #
 ARGS=$1
 
-echo "....removing any dredges of warped2"
-rm -rf warped2
-
 echo "....warped2"
 date
 cd warped2
