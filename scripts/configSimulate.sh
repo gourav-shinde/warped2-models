@@ -14,8 +14,7 @@ function control_c() {
 function build {
     rootPath=$1
     gitBranch=$2
-    mpiIncludePath=$3
-    mpiLibraryPath=$4
+    export mpiIncludePath=/usr/lib/x86_64-linux-gnu/openmpi/include
     additionalFlags=$5
 
     garbageSearch="cincinnati"
@@ -33,17 +32,17 @@ function build {
     git pull
     autoreconf -i | grep $garbageSearch
     ./configure --with-mpi-includedir=$mpiIncludePath \
-        --with-mpi-libdir=$mpiLibraryPath --prefix=$rootPath/installation/ \
-        $additionalFlags | grep $garbageSearch
+        --prefix=$rootPath/installation/ \
+        $additionalFlags CXXFLAGS='-g -O3'| grep $garbageSearch
     make -s clean all | grep $garbageSearch
-    make install | grep $garbageSearch
+    make -j 8 install | grep $garbageSearch
 
     echo -e "Building WARPED2-MODELS"
 
     cd $rootPath/warped2-models/
     autoreconf -i | grep $garbageSearch
-    ./configure --with-warped=$rootPath/installation/ | grep $garbageSearch
-    make -s clean all | grep $garbageSearch
+    ./configure --with-warped=$rootPath/installation/ CXXFLAGS='-g -O3' CXX=mpicxx | grep $garbageSearch
+    make -j 8 | grep $garbageSearch
 
     cd $rootPath/warped2-models/scripts/
 

@@ -22,7 +22,7 @@ CHECK_LIB_WARPED
 m4_include([m4/check_lib_tcmalloc.m4])
 CHECK_LIB_TCMALLOC
 
-CXXFLAGS="-Wall -Wextra -pedantic -Werror $CXXFLAGS"
+CXXFLAGS="-Wall -Wextra -Werror -pedantic $CXXFLAGS"
 
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([deps/Makefile])
