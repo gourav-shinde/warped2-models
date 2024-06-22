@@ -1,7 +1,7 @@
 #!/bin/bash
 # Allows batch runs of simulations. Saves results to log files
 
-export ROOTPATH="/home/gaurav/workspace/"
+export ROOTPATH="/home/gaurav/workspace"
 
 # run if user hits control-c
 function control_c() {
