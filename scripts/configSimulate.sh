@@ -1,6 +1,7 @@
 #!/bin/bash
 # Allows batch runs of simulations. Saves results to log files
 
+export ROOTPATH="/home/gaurav/workspace/"
 
 # run if user hits control-c
 function control_c() {
@@ -15,7 +16,7 @@ function build {
     rootPath=$1
     gitBranch=$2
     export mpiIncludePath=/usr/lib/x86_64-linux-gnu/openmpi/include
-    additionalFlags=$5
+    additionalFlags=$3
 
     garbageSearch="cincinnati"
 
@@ -497,10 +498,11 @@ function runScheduleQ {
     gvtMethod=${8}
     gvtPeriod=${9}
     stateSavePeriod=${10}
+    branch=$(git rev-parse --abbrev-ref HEAD)
 
     logFile="logs/scheduleq.csv"
 
-    header="Model,Model_Command,Max_Simulation_Time,Worker_Thread_Count,Schedule_Queue_Type,\
+    header="branch,Model,Model_Command,Max_Simulation_Time,Worker_Thread_Count,Schedule_Queue_Type,\
             Schedule_Queue_Count,is_LP_Migration_ON,GVT_Method,GVT_Period,State_Save_Period,\
             Simulation_Runtime_(secs.),Number_of_Objects,Local_Positive_Events_Sent,\
             Remote_Positive_Events_Sent,Local_Negative_Events_Sent,Remote_Negative_Events_Sent,\
@@ -548,7 +550,7 @@ function runScheduleQ {
         then
             # Parse stats
             # Write to log file
-            totalStats="$model,$modelCmd,$maxSimTime,$workerThreads,"multiset",\
+            totalStats="$branch,$model,$modelCmd,$maxSimTime,$workerThreads,"multiset",\
                         $scheduleQCount,$isLpMigrationOn,$gvtMethod,$gvtPeriod,\
                         $stateSavePeriod,$statsRaw"
             statsRefined=`echo $totalStats | sed -e 's/Total,//g' -e 's/\t//g' -e 's/ //g'`
@@ -581,10 +583,11 @@ function runUnifiedQ {
     workerThreads=${6}
     gvtPeriod=${7}
     stateSavePeriod=${8}
+    branch=$(git rev-parse --abbrev-ref HEAD)
 
     logFile="logs/scheduleq.csv"
 
-    header="Model,Model_Command,Max_Simulation_Time,Worker_Thread_Count,Schedule_Queue_Type,\
+    header="branch,Model,Model_Command,Max_Simulation_Time,Worker_Thread_Count,Schedule_Queue_Type,\
             Schedule_Queue_Count,is_LP_Migration_ON,GVT_Method,GVT_Period,State_Save_Period,\
             Simulation_Runtime_(secs.),Number_of_Objects,Local_Positive_Events_Sent,\
             Remote_Positive_Events_Sent,Local_Negative_Events_Sent,Remote_Negative_Events_Sent,\
@@ -629,14 +632,14 @@ function runUnifiedQ {
         then
             # Parse stats
             # Write to log file
-            totalStats="$model,$modelCmd,$maxSimTime,$workerThreads, "multiset"\
+            totalStats="$branch,$model,$modelCmd,$maxSimTime,$workerThreads, "multiset"\
                         $workerThreads,$isLpMigrationOn,$gvtMethod,$gvtPeriod,\
                         $stateSavePeriod,$statsRaw"
             
             statsRefined=`echo $totalStats | sed -e 's/Total,//g' -e 's/\t//g' -e 's/ //g'`
             echo $statsRefined >> $logFile
         else
-            errMsg="runScheduleQ 1 $timeoutPeriod $model \"$modelCmd\" $maxSimTime \
+            errMsg="runUnifiedQ 1 $timeoutPeriod $model \"$modelCmd\" $maxSimTime \
                     $workerThreads \"$scheduleQType\" $workerThreads $isLpMigrationOn \
                     $gvtMethod $gvtPeriod $stateSavePeriod"
             errMsgRefined=`echo $errMsg | sed -e 's/\t//g'`
