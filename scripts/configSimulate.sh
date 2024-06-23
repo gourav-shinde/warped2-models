@@ -14,7 +14,7 @@ function control_c() {
 # build <rootPath> <gitBranch> <mpiIncludePath> <mpiLibraryPath> <additionalFlags>
 function build {
     rootPath=$1
-    gitBranch=$2
+    export gitBranch=$2
     export mpiIncludePath=/usr/lib/x86_64-linux-gnu/openmpi/include
     additionalFlags=$3
 
@@ -498,7 +498,7 @@ function runScheduleQ {
     gvtMethod=${8}
     gvtPeriod=${9}
     stateSavePeriod=${10}
-    branch=$(git rev-parse --abbrev-ref HEAD)
+    branch=${gitBranch}
 
     logFile="logs/scheduleq.csv"
 
