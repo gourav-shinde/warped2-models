@@ -1,7 +1,7 @@
 #!/bin/bash
 # Allows batch runs of simulations. Saves results to log files
 
-export ROOTPATH="/home/gaurav/workspace"
+export ROOTPATH="/home/shindegy"
 
 # run if user hits control-c
 function control_c() {
@@ -583,7 +583,7 @@ function runUnifiedQ {
     workerThreads=${6}
     gvtPeriod=${7}
     stateSavePeriod=${8}
-    branch=$(git rev-parse --abbrev-ref HEAD)
+    branch=$(gitBranch)
 
     logFile="logs/scheduleq.csv"
 
