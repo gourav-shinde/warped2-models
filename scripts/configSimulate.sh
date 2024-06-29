@@ -47,7 +47,7 @@ function build {
 
     cd $rootPath/warped2-models/scripts/
 
-    buildCmd="build $rootPath $gitBranch $mpiIncludePath $mpiLibraryPath \"$additionalFlags\""
+    buildCmd="build $rootPath $gitBranch \"$additionalFlags\""
     echo $buildCmd >> $errlogFile
 
     sleep 10
