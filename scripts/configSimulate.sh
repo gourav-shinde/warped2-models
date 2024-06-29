@@ -556,8 +556,8 @@ function runScheduleQ {
             statsRefined=`echo $totalStats | sed -e 's/Total,//g' -e 's/\t//g' -e 's/ //g'`
             echo $statsRefined >> $logFile
         else
-            errMsg="runScheduleQ 1 $timeoutPeriod $model \"$modelCmd\" $maxSimTime \
-                    $workerThreads \"$scheduleQType\" $scheduleQCount $isLpMigrationOn \
+            errMsg="runScheduleQ 1 $timeoutPeriod $model \"$modelCmd \" $maxSimTime \
+                    $workerThreads \ $scheduleQCount $isLpMigrationOn \
                     $gvtMethod $gvtPeriod $stateSavePeriod"
             errMsgRefined=`echo $errMsg | sed -e 's/\t//g'`
             echo $errMsgRefined >> $errlogFile
