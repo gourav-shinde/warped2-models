@@ -170,7 +170,7 @@ function runScheduleQ {
         then
             # Parse stats
             # Write to log file
-            totalStats="$branch,$model,$modelCmd,$maxSimTime,$workerThreads,"multiset",\
+            totalStats="$branch,$model,"$modelCmd",$maxSimTime,$workerThreads,"multiset",\
                         $scheduleQCount,$isLpMigrationOn,$gvtMethod,$gvtPeriod,\
                         $stateSavePeriod,$statsRaw"
             statsRefined=`echo $totalStats | sed -e 's/Total,//g' -e 's/\t//g' -e 's/ //g'`
