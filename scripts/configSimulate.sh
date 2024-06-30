@@ -123,7 +123,7 @@ function runScheduleQ {
             # Parse stats
             # Write to log file
             totalStats="$branch,$model,\"$modelCmd\",$maxSimTime,$workerThreads,"multiset",\
-                        $scheduleQCount,$isLpMigrationOn,$gvtMethod,$gvtPeriod,\
+                        $scheduleQCount,$isLpMigrationOn,$gvtMethod,\
                         $stateSavePeriod,$statsRaw"
             statsRefined=`echo $totalStats | sed -e 's/Total,//g' -e 's/\t//g' -e 's/ //g'`
             echo $statsRefined >> $logFile
@@ -205,7 +205,7 @@ function runUnifiedQ {
             # Parse stats
             # Write to log file
             totalStats="$branch,$model,\"$modelCmd\",$maxSimTime,$workerThreads, "multiset",\
-                        $workerThreads,$isLpMigrationOn,$gvtMethod,$gvtPeriod,\
+                        $workerThreads,$isLpMigrationOn,$gvtMethod,\
                         $stateSavePeriod,$statsRaw"
             
             statsRefined=`echo $totalStats | sed -e 's/Total,//g' -e 's/\t//g' -e 's/ //g'`
