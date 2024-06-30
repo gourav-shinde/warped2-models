@@ -252,7 +252,7 @@ function runUnifiedQ {
         then
             # Parse stats
             # Write to log file
-            totalStats="$branch,$model,$modelCmd,$maxSimTime,$workerThreads, "multiset",\
+            totalStats="$branch,$model,"$modelCmd",$maxSimTime,$workerThreads, "multiset",\
                         $workerThreads,$isLpMigrationOn,$gvtMethod,$gvtPeriod,\
                         $stateSavePeriod,$statsRaw"
             
