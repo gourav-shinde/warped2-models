@@ -16,13 +16,12 @@ mkdir -p "$output_base_dir"
 for folder in "$config_dir"/* ; do
     if [ -d "$folder" ]; then
         folder_name=$(basename "$folder")
-        log_dir="logs/$folder_name"
+        log_dir="logs/"
         mkdir -p "$log_dir"
 
         echo "Processing folder: $folder_name"
         for config in "$folder"/* ; do
             echo "Running simulation for $config"
-            log_file="$log_dir/$(basename "$config").log"
             ./configSimulate.sh "$config"
         done
 
@@ -31,7 +30,6 @@ for folder in "$config_dir"/* ; do
         output_dir="$output_base_dir/${folder_name}_$timestamp"
         mkdir -p "$output_dir"
         mv "$log_dir"/* "$output_dir/"
-        rmdir "$log_dir"
         echo "Logs moved to $output_dir"
     fi
 done
