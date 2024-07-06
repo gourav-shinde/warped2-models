@@ -129,7 +129,7 @@ function runScheduleQ {
             echo $statsRefined >> $logFile
         else
             errMsg="runScheduleQ 1 $timeoutPeriod $model \"$modelCmd \" $maxSimTime \
-                    $workerThreads \ $scheduleQCount $isLpMigrationOn \
+                    $workerThreads $scheduleQCount $isLpMigrationOn \
                     $gvtMethod $gvtPeriod $stateSavePeriod"
             errMsgRefined=`echo $errMsg | sed -e 's/\t//g'`
             echo $errMsgRefined >> $errlogFile
@@ -204,8 +204,8 @@ function runUnifiedQ {
         then
             # Parse stats
             # Write to log file
-            totalStats="$branch,$model,\"$modelCmd\",$maxSimTime,$workerThreads, "multiset",\
-                        $workerThreads,$isLpMigrationOn,$gvtMethod,\
+            totalStats="$branch,$model,\"$modelCmd\",$maxSimTime,$workerThreads, "multiset", \
+                        $workerThreads,$isLpMigrationOn,$gvtMethod, \
                         $stateSavePeriod,$statsRaw"
             
             statsRefined=`echo $totalStats | sed -e 's/Total,//g' -e 's/\t//g' -e 's/ //g'`
