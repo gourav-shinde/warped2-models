@@ -155,7 +155,7 @@ function runUnifiedQ {
     workerThreads=${6}
     gvtPeriod=${7}
     stateSavePeriod=${8}
-    branch=$(gitBranch)
+    branch=${gitBranch}
 
     logFile="logs/scheduleq.csv"
 
