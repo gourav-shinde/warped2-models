@@ -1,7 +1,7 @@
 #!/bin/bash
 # Allows batch runs of simulations. Saves results to log files
 
-export ROOTPATH="/home/shindegy"
+export ROOTPATH="/home/gaurav/workspace"
 
 # run if user hits control-c
 function control_c() {
@@ -15,7 +15,8 @@ function control_c() {
 function build {
     rootPath=$1
     export gitBranch=$2
-    export mpiIncludePath=/usr/lib/x86_64-linux-gnu/openmpi/include
+    export mpiIncludePath=/usr/include/x86_64-linux-gnu/mpich
+    export mpiLibraryPath=/usr/lib/x86_64-linux-gnu/mpich
     additionalFlags=$3
 
     garbageSearch="cincinnati"
@@ -33,7 +34,7 @@ function build {
     git pull
     autoreconf -i | grep $garbageSearch
     ./configure --with-mpi-includedir=$mpiIncludePath \
-        --prefix=$rootPath/installation/ \
+        --with-mpi-libdir=$mpiLibraryPath --prefix=$rootPath/installation/ \
         $additionalFlags CXXFLAGS='-g -O3'| grep $garbageSearch
     make -s clean all | grep $garbageSearch
     make -j 8 install | grep $garbageSearch
