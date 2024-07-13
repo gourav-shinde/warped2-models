@@ -15,8 +15,8 @@ function control_c() {
 function build {
     rootPath=$1
     export gitBranch=$2
-    export mpiIncludePath=/usr/include/x86_64-linux-gnu/mpich
-    export mpiLibraryPath=/usr/lib/x86_64-linux-gnu/mpich
+    export mpiIncludePath="/usr/include/x86_64-linux-gnu/mpich"
+    export mpiLibraryPath="/usr/lib/x86_64-linux-gnu/mpich"
     additionalFlags=$3
 
     garbageSearch="cincinnati"
@@ -29,26 +29,25 @@ function build {
     fi
 
     cd $rootPath/warped2/
-    git restore *
     git checkout $gitBranch
     git pull
     autoreconf -i | grep $garbageSearch
     ./configure --with-mpi-includedir=$mpiIncludePath \
         --with-mpi-libdir=$mpiLibraryPath --prefix=$rootPath/installation/ \
-        $additionalFlags CXXFLAGS='-g -O3'| grep $garbageSearch
+        $additionalFlags | grep $garbageSearch
     make -s clean all | grep $garbageSearch
-    make -j 8 install | grep $garbageSearch
+    make install | grep $garbageSearch
 
     echo -e "Building WARPED2-MODELS"
 
     cd $rootPath/warped2-models/
     autoreconf -i | grep $garbageSearch
-    ./configure --with-warped=$rootPath/installation/ CXXFLAGS='-g -O3' CXX=mpicxx | grep $garbageSearch
-    make -j 8 | grep $garbageSearch
+    ./configure --with-warped=$rootPath/installation/ | grep $garbageSearch
+    make -s clean all | grep $garbageSearch
 
     cd $rootPath/warped2-models/scripts/
 
-    buildCmd="build $rootPath $gitBranch \"$additionalFlags\""
+    buildCmd="build $rootPath $gitBranch $mpiIncludePath $mpiLibraryPath \"$additionalFlags\""
     echo $buildCmd >> $errlogFile
 
     sleep 10
