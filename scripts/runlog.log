@@ -1,0 +1,160 @@
+config/traffic_only/traffic-10k-20k.config
+Simulations for 10k LPs traffic
+
+Installing WARPED2:master
+Your branch is up to date with 'origin/master'.
+Already up to date.
+Building WARPED2-MODELS
+
+Sequential : ./traffic_sim : max sim time: 10000
+6231127
+10000
+18.0638
+permuteConfigScheduleQ: 5 150 traffic  ./traffic_sim max_sim_time worker_threads worker_threads gvt_method gvt_period state_save_period
+1 : 5
+2 : 150
+3 : traffic
+4 :  ./traffic_sim
+5 : max_sim_time
+6 : worker_threads
+7 : worker_threads
+8 : gvt_method
+9 : gvt_period
+\warped : ./traffic_sim : max sim time: 10000, : worker threads: 3, schedule queue count: 3, GVT: asynchronous-1000, state saving period: 32
+hmm went to last loop
+
+New logfile logs/scheduleq.csv created
+
+(1/5) ./traffic_sim : 3 threads, 3 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 14.6506 second(s)
+
+(2/5) ./traffic_sim : 3 threads, 3 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 14.4313 second(s)
+
+(3/5) ./traffic_sim : 3 threads, 3 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 14.7377 second(s)
+
+(4/5) ./traffic_sim : 3 threads, 3 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 14.6381 second(s)
+
+(5/5) ./traffic_sim : 3 threads, 3 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 15.3535 second(s)
+hmm went to last loop
+
+Data will now be recorded in logs/scheduleq.csv
+
+(1/5) ./traffic_sim : 6 threads, 6 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 13.403 second(s)
+
+(2/5) ./traffic_sim : 6 threads, 6 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 12.9552 second(s)
+
+(3/5) ./traffic_sim : 6 threads, 6 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 13.3611 second(s)
+
+(4/5) ./traffic_sim : 6 threads, 6 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 13.349 second(s)
+
+(5/5) ./traffic_sim : 6 threads, 6 , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+non unified 
+Type of Schedule queue:    MultiSet
+Simulation completed in 13.3857 second(s)
+
+Installing WARPED2:UnifiedMainBranch with additional flag(s) --with-unified-queue
+Your branch is up to date with 'origin/UnifiedMainBranch'.
+Already up to date.
+Building WARPED2-MODELS
+permuteConfigScheduleQ: 5 150 traffic  ./traffic_sim max_sim_time worker_threads gvt_method gvt_period state_save_period
+1 : 5
+2 : 150
+3 : traffic
+4 :  ./traffic_sim
+5 : max_sim_time
+6 : worker_threads
+7 : gvt_method
+8 : gvt_period
+9 : state_save_period
+\warped : ./traffic_sim : max sim time: 10000, : worker threads: 3, GVT: asynchronous-1000, state saving period: 32
+hmm went to last unified loop
+
+Data will now be recorded in logs/scheduleq.csv
+
+(1/5) ./traffic_sim : 3 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 26.4678 second(s)
+
+(2/5) ./traffic_sim : 3 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 26.1284 second(s)
+
+(3/5) ./traffic_sim : 3 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 26.3541 second(s)
+
+(4/5) ./traffic_sim : 3 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 26.4358 second(s)
+
+(5/5) ./traffic_sim : 3 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 25.5778 second(s)
+hmm went to last unified loop
+
+Data will now be recorded in logs/scheduleq.csv
+
+(1/5) ./traffic_sim : 6 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 24.1588 second(s)
+
+(2/5) ./traffic_sim : 6 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 23.2587 second(s)
+
+(3/5) ./traffic_sim : 6 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 23.7946 second(s)
+
+(4/5) ./traffic_sim : 6 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 24.0775 second(s)
+
+(5/5) ./traffic_sim : 6 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
+Type of Schedule queue:    MultiSet
+Simulation completed in 24.1712 second(s)
+
+Installing WARPED2:UnifiedOptimizedBranch with additional flag(s) --with-unified-queue
+Building WARPED2-MODELS
+permuteConfigScheduleQ: 5 150 traffic  ./traffic_sim max_sim_time worker_threads gvt_method gvt_period state_save_period
+1 : 5
+2 : 150
+3 : traffic
+4 :  ./traffic_sim
+5 : max_sim_time
+6 : worker_threads
+7 : gvt_method
+8 : gvt_period
+9 : state_save_period
+\warped : ./traffic_sim : max sim time: 10000, : worker threads: 3, GVT: asynchronous-1000, state saving period: 32
+hmm went to last unified loop
+
+Data will now be recorded in logs/scheduleq.csv
+
+(1/5) ./traffic_sim : 3 threads, , is LP migration on: , GVT: asynchronous-1000, state saving period: 32, max sim time: 10000
